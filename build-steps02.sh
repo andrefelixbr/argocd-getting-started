@@ -8,9 +8,9 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2
 
-#argocd-server-5d7b59fcd-n7mdg
+#argocd-server-69678b4f65-52wj6
 
-echo "Using ArgoCD"
+echo "Using ArgoCD"ch
 
 	argocd login --insecure localhost:8080
 
