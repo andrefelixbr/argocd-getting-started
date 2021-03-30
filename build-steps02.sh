@@ -2,17 +2,17 @@
 
 ./build-steps01.sh
 
-watch kubectl get pods -n argocd
+kubectl get pods -n argocd -w
 
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2
 
-#argocd-server-69678b4f65-5dh74
+#argocd-server-5d7b59fcd-n7mdg
 
 echo "Using ArgoCD"
 
-	argocd login localhost:8080
+	argocd login --insecure localhost:8080
 
 	argocd account update-password
 
