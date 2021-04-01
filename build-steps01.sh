@@ -4,14 +4,12 @@ echo "delete clusters"
 
 minikube delete -p target-k8s
 minikube delete -p argocd-k8s
-minikube delete -p minikube
 
 echo "Create the clusters"
 
 minikube start -p target-k8s
 minikube start -p argocd-k8s
-minikube start -p minikube
-minikube addons enable ingress
+minikube addons -p argocd-k8s enable ingress
 
 echo "Set the argocd cluster as default"
 
