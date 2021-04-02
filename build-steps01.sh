@@ -18,4 +18,7 @@ kubectl config use-context argocd-k8s
 echo "Install Argocd in the cluster"
 
 kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl apply -n argocd -f install.yml
+
+echo "Listing pods"
+kubectl get pods -n argocd -w
